@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 import ru.parfenov.model.ResponseFromWeatherPr;
 import ru.parfenov.repository.RFWPRepository;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class RFWPService {
@@ -14,7 +17,7 @@ public class RFWPService {
         repository.save(response);
     }
 
-    public ResponseFromWeatherPr findByCity(String city) {
-        return repository.findByCity(city);
+    public List<ResponseFromWeatherPr> findByCityAndDate(String city, String country, Date date, Date nextDate) {
+        return repository.findByCityAndCountryAndDateTimeBetween(city, country, date, nextDate);
     }
 }

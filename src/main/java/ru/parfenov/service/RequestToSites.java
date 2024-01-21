@@ -11,7 +11,7 @@ import ru.parfenov.dto.ResponseDTO3;
 import ru.parfenov.model.ResponseFromWeatherPr;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -44,7 +44,7 @@ public class RequestToSites {
             String strT = String.format("%.2f",t);
             if (country.equals(responseDTO1.getSys().getCountry())) {
                 ResponseFromWeatherPr response = new ResponseFromWeatherPr(
-                        0, city,  strT, Calendar.getInstance(), country
+                        0, city,  strT, new Date(), country
                 );
                 save(response);
             } else {

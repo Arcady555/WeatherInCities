@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Calendar;
+import java.util.Date;
 
 @AllArgsConstructor
 @Getter
@@ -22,6 +22,8 @@ public class ResponseFromWeatherPr {
     private int id;
     private String city;
     private String temperature;
-    private Calendar dateAndTime;
+    @Column(name = "date_and_time")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateTime;
     private String country;
 }

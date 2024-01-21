@@ -6,4 +6,5 @@ import ru.parfenov.model.ResponseFromWeatherPr;
 
 @Repository
 public interface RFWPRepository extends CrudRepository<ResponseFromWeatherPr, Integer> {
+    ResponseFromWeatherPr findByCity(String city);
 }

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Timestamp;
+import java.util.Calendar;
 
 @AllArgsConstructor
 @Getter
@@ -21,6 +21,7 @@ public class ResponseFromWeatherPr {
     @NotNull(message = "Id must be non null")
     private int id;
     private String city;
-    private float temperature;
-    private Timestamp dateAndTime;
+    private String temperature;
+    private Calendar dateAndTime;
+    private String country;
 }
